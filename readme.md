@@ -14,6 +14,6 @@ A letra "u" | convertida para "ufat"
 * Não devem ser utilizados letras com acentos nem caracteres especiais
 * Deve ser possível converter uma palavra para a versão criptografada e também retornar uma palavra criptografada para a versão original.
 
-### Por exemplo:
+## Por exemplo:
 "gato" => "gaitober"
 gaitober" => "gato"
