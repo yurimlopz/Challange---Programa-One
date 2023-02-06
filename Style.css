@@ -185,6 +185,12 @@ footer{
     cursor: pointer;
 }
 
+.redes-sociais a{
+
+    color: #FFFFFF;
+
+}
+
 /* Responsividade */
 
 @media only screen and (max-width: 992px){

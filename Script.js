@@ -3,7 +3,7 @@ const criptografa = document.querySelector("#btn-criptografar");
 const descriptografa = document.querySelector("#btn-descriptografar");
 const texto = document.querySelector("#texto");
 const btnCopiar = document.querySelector("#copiar");
-const textoManipulado = document.querySelector("#textoManipulado")
+const textoManipulado = document.querySelector("#textoManipulado");
 
 /* Arrays */
 let letras = ["e","i","a","o","u"];
@@ -61,8 +61,9 @@ class adiconandoTextoCriptografado{
 
 texto.addEventListener("click", ()=>{
     if(texto.value){
-        texto.value = ""
-        console.log(textoManipulado.textContent="")
+        texto.value = "";
+        textoManipulado.textContent="";
+        btnCopiar.innerText = "Copiar";
     }
 })
 
@@ -80,9 +81,8 @@ function criptografar(){
         atualizaTela.atualiza();
     
         let adicionarConteudo  = new adiconandoTextoCriptografado("#textoManipulado", valorTexto);
-        adicionarConteudo.pegaConteudo();
-    }
-    texto.value = valorTexto;
+        adicionarConteudo.pegaConteudo();        
+}
 }
 
 function checarCaracter(evento){
@@ -124,7 +124,9 @@ function descriptografar(){
 }
 
 function copiar(){
-    console.log("Hello World");
+    navigator.clipboard.writeText(textoManipulado.innerHTML)
+  .then(() => btnCopiar.innerText ="Texto Copiado")
+  .catch(err => console.log("Não foi possível copiar"))
 }
 
 /* Evento */
@@ -138,5 +140,4 @@ texto.addEventListener("keypress",(evento)=>{
         /* evento.preventDefault() = comportamento padrao n vai ser executado se for caracter especial n vai aparecer no imput */
         evento.preventDefault();
     }
-
 })
